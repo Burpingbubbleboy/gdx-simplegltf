@@ -1,11 +1,11 @@
-package net.bupy.gltfloading.gltfloader;
+package net.bupy.gltf;
 
 import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 
 /**
  * Data container class that represents a single Node when parsing a .GLTF file.<br>
- * Fields are named in according to the .GLTF 2.0 reference
+ * Fields are named in according to the .GLTF 2.0 reference.
  */
 public class GLTFNode {
 
