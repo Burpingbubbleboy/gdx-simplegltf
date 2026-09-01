@@ -1,33 +1,29 @@
 # gltf loading
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+a simple .GLTF loader designed to work with libGDX's default rendering pipeline.
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+this loader DOES NOT USE PBR and it DOES NOT HIJACK YOUR RENDERING VIA ITS OWN SCENE SYSTEM.
+if you want to use PBR, you should probably be looking at glx-gltf.
+https://github.com/mgsx-dev/gdx-gltf
 
-## Platforms
+this code is as I left it on August 31, 2026.
+I'm super demotivated to work on anything libGDX related as I've since switched tools to LWJGL3,
+although this was a project I felt I needed to release.
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+this loader is not currently available on maven central, but I did include a .jar file in github releases to use.
 
-## Gradle
+this loader is currently unlikely to receive updates, although you have full permission to fork it into your own thing.
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+see "core/src/main/java/net/bupy/app/Main.java" for usage details.
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+# features
+- simple .GLTF loading, works natively with libGDX's default AssetManager.
+- doesn't hijack rendering, simply returns a libGDX Model class to use with any shader you want.
+- clean, small foundation to fork and build from, complete with comments and javadoc
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+# notes
+- this loader was originally created to avoid libGDX's .G3DB and .G3DJ formats, as such:
+    - this loader DOES NOT SUPPORT PBR.
+    - this loader DOES NOT SUPPORT A SCENE GRAPH SYSTEM.
+    
+- it also doesn't support animations or mipmapping, as I didn't get around to implementing those before release.
