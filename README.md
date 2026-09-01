@@ -2,7 +2,7 @@
 
 a simple .GLTF loader designed to work with libGDX's default rendering pipeline.
 
-this loader DOES NOT USE PBR and it DOES NOT HIJACK YOUR RENDERING VIA ITS OWN SCENE SYSTEM.
+this loader DOES NOT USE OR SUPPORT PBR.
 if you want to use PBR, you should probably be looking at glx-gltf.
 https://github.com/mgsx-dev/gdx-gltf
 
